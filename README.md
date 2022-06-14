@@ -3,8 +3,10 @@
 William W Trigeiro, L Joseph Thomas, and John O McClain. Capacitated
 lot sizing with setup times. Management science, 35(3):353–366, 1989.
 
-|Amount of items | Amount of periods
-||
+|   |  |   |   |
+|---|---|---|---|
+|Amount of items ($n$)| Amount of periods ($T$)|
+|Trash|
 |Capacity|
-||holding cost of item i| setup time of item i| setup cost of item i
+|time to produce one item ($b_i$)|holding cost of item ($hc_i$)| setup time of item ($st_i$)| setup cost of item ($sc_i$)|
 |demand - each row one period, each column one item|
