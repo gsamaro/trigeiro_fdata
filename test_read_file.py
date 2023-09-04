@@ -31,6 +31,7 @@ def test_ler_dados_G73():
     assert data.d[0, 0] == 0
     assert data.d[-1, -1] == 97
 
+
 @pytest.mark.parametrize("instance", ["F1.dat", "G73.dat"])
 @pytest.mark.parametrize("r", [1])
 @pytest.mark.parametrize("expected_cs", [1045684, 30361217])
@@ -38,6 +39,7 @@ def test_datacs(instance: str, r: int, expected_cs: int):
     data = DataCs(instance, r)
     assert np.sum(data.vc) == expected_cs
     assert data.r == r
+
 
 @pytest.mark.parametrize("instance", ["F1.dat", "G73.dat"])
 @pytest.mark.parametrize("r", [1])
