@@ -20,7 +20,13 @@ from read_file import DataCs
 data = DataCs("F1.dat", r=3)
 ```
 
+Note that:
+
+$cs_{itk} = (vc_{it} + \sum\limits_{u=t}^{T} hc_{iu})d_{ik}\quad\forall i=1,\dots,n,\quad\forall t=1,\dots,T\quad\forall k=1,\dots,T$
+
 Where `r` is the amount of machines.
+
+And `vt` is zero by default.
 
 # Trigeiro et. al. (1989) datasets
 
