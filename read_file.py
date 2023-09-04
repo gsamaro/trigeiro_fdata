@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from dataclasses import dataclass
 import re
+from typing import Dict
 
 
 @dataclass
@@ -68,6 +69,24 @@ class LerDados:
         column_names = [i for i in range(max(col_count))]
         return column_names
 
+@dataclass
+class DataCs(LerDados):
+    vc: np.array
+    cs: Dict
+    r: int
+
+    def __init__(self, instance: str, r: int):
+        super().__init__(instance)
+        self._create_vc_cs()
+        self.r = r
+
+    def _create_vc_cs(self):
+        self.vc = np.zeros((self.nitems, self.nperiodos))
+        self.cs = np.zeros((self.nitems, self.nperiodos, self.nperiodos))
+        for i in range(self.nitems):
+            for t in range(self.nperiodos):
+                for k in range(self.nperiodos):
+                    self.cs[i, t, k] = (self.vc[i, t] + sum(self.hc[i] for u in range(t, k)))*self.d[i, k]
 
 if __name__ == "__main__":
     ler = LerDados("G73.dat")
