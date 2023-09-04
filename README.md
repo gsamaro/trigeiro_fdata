@@ -4,11 +4,23 @@
 
 # Usage
 
+For a single machine instance:
+
 ```
 from read_file import LerDados
 
 data = LerDados("F1.dat")
 ```
+
+For parallel machine instance:
+
+```
+from read_file import DataCs
+
+data = DataCs("F1.dat", r=3)
+```
+
+Where `r` is the amount of machines.
 
 # Trigeiro et. al. (1989) datasets
 
