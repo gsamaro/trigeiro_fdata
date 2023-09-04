@@ -69,6 +69,7 @@ class LerDados:
         column_names = [i for i in range(max(col_count))]
         return column_names
 
+
 @dataclass
 class DataCs(LerDados):
     vc: np.array
@@ -86,7 +87,10 @@ class DataCs(LerDados):
         for i in range(self.nitems):
             for t in range(self.nperiodos):
                 for k in range(self.nperiodos):
-                    self.cs[i, t, k] = (self.vc[i, t] + sum(self.hc[i] for u in range(t, k)))*self.d[i, k]
+                    self.cs[i, t, k] = (
+                        self.vc[i, t] + sum(self.hc[i] for u in range(t, k))
+                    ) * self.d[i, k]
+
 
 if __name__ == "__main__":
     ler = LerDados("G73.dat")
